@@ -1,0 +1,99 @@
+
+:root {
+    /* https://realtimecolors.com/palettes/?colors=000000-ffffff-8fb3ff-ebf1ff-d41d6d */
+    --green: #068770;
+    --complementary_1: #f5ccd3;
+    --complementary_2: #da3e5b;
+    --complementary_3: #358d7d;
+    --complementary_4: #4e7971;
+    --ds_comp_1: #d93aa7;
+    --ds_comp_2: #dc7647;
+    --ds_comp_3: #bee36d;
+    --ds_comp_4: #3ea9da;
+    --split_comp_1: #fef0fa;
+    --split_comp_2: #fbbea2;
+    --split_comp_3: #768ae5;
+    --split_comp_4: #3f52a6;
+    --shade_1: #0b6f5d;
+    --shade_2: #105649;
+    --shade_3: #12302b;
+    --shade_4: #0c1311;
+    --square_1: #c5acfb;
+    --square_2: #fa8fa2;
+    --square_3: #f0fdd3;
+    --square_4: #80b5f9;
+    --triadic_1: #f3ddf8;
+    --triadic_2: #b629d6;
+    --triadic_3: #897934;
+    --triadic_4: #706948;
+    --compound_1: #47addc;
+    --compound_2: #fa8fd8;
+    --compound_3: #fde4d8;
+    --compound_4: #69e28f;
+    --analogous_1: #8ad6fa;
+    --analogous_2: #32e9f6;
+    --analogous_3: #76f9c0;
+    --analogous_4: #54f788;
+    --monochrome_1: #36d9bb;
+    --monochrome_2: #42ae9a;
+    --monochrome_3: #056755;
+    --monochrome_4: #2e4843;
+  }
+
+
+body {
+    background-color: rgb(48, 48, 48);
+  }
+html{
+    font-family: Georgia;
+    display:inline-block;
+    margin: 0px auto;
+    color: rgb(212, 212, 212);
+    }
+h1{color: var(--green); padding: 2vh;}
+table, tr, td, th {
+    border: solid rgb(6,135,112) 1px;
+    border-collapse: collapse;
+    padding: 4px
+}
+.button{
+    display: inline-block;
+    background-color: #e7bd3b;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 16px 40px;
+    text-decoration: none;
+    font-size: 30px;
+    margin: 2px;
+    cursor: pointer;
+    }
+.sm_button{
+    display: inline-block;
+    background-color: #e7bd3b;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    padding: 8px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    margin: 2px;
+    cursor: pointer;
+    }
+.xsm_button{
+    display: inline-block;
+    background-color: #e7bd3b;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    padding: 4px 10px;
+    text-decoration: none;
+    font-size: 15px;
+    margin: 2px;
+    cursor: pointer;
+    }
+.blue{background-color: var(--ds_comp_4);}
+.green{background-color: var(--green);}
+.red{background-color: var(--complementary_2);}
+.pink{background-color: var(--ds_comp_1);}
+.coral{background-color: var(--ds_comp_2);}

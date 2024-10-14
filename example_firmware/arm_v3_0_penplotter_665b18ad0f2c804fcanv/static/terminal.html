@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Evezor Terminal ESP32</title>
+  
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="fancy_elements.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark-reasonable.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  
+  <style>
+    .terminal {
+      height: 350px;
+      padding: 10px;
+      background-color: #304050;
+      font: 15px monospace;
+      color: white;
+      overflow: scroll;
+      text-align: left;
+      resize: vertical;
+    }
+
+    .term_input {
+      border: 0px;
+      padding: 10px 10px;
+      outline: none;
+      border-top: 1px solid white;
+      background-color: #304050;
+      font: 15px monospace;
+      letter-spacing: 2px;
+      color: white;
+      overflow: scroll;
+      text-align: left;
+    }
+    .parameter {
+      padding: 10px; 
+      margin: 3px;
+      border: solid 1px white; 
+      border-radius: 5px;
+    }
+    input {
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      width: 100%;
+      margin-top: 3px;
+      color: white;
+      border: 1px solid #5FA3D3;
+      background-color: #304050;
+    }
+  </style>
+  <script>
+    var websocket = null;
+  </script>
+</head>
+
+<body>
+  <div id="host_type" style="visibility: hidden;">esp32</div>
+  <form  style="visibility: hidden;">
+    <label>Network ID: <input type="text" id="nwk_id" autocomplete="off" style="width: 25%;" value="nwk_123"/></label>
+    <label>Token: <input type="text" id="token" autocomplete="off" style="width: 25%;" value="some-key-token"/></label>
+    <label>Canvas_id: <input type="text" id="canvas_id" autocomplete="off" style="width: 25%;" value="{{ canvas_id }}"/></label>
+  </form>
+  <button id="connect_button" onclick="init(event)">Connect</button>
+  <h1>Evezor Terminal</h1>
+  <img src="logo.png" alt="Success Story" height="200" />
+  
+  <!-- the main terminal -->
+  <div id="chat" class="terminal"></div>
+  <div id="input-chat" class="term_input" contenteditable="true"></div>
+  shift + enter for newline
+  <br><br>
+
+  <div id="parameters" style="display:flexbox;"></div> 
+
+  <hr>
+
+  <script type="text/javascript" src="terminal.js"></script>
+  <script type="text/javascript" src="parameters.js"></script>
+  <script>
+    build_params([
+      {"name": 'text_input', "pid": 3456, "code": true, "type": "GuiCodeEditor"},
+      {"name": 'slider2', "pid": 2345, "min": 0, "max": 100, "initial_value": 50, "type": "slider"},
+      {"name": 'checkbox', "pid": 12345, "type": "checkbox", "initial_value": false},
+      {"name": 'GRBLScara', "pid": 19367, "type": "GRBLScara"},
+      {"name": "FileSender", "pid": 5432, "type": "FileSender"},
+      {"name": 'Zorg', "pid": 7046, "type": "Zorg"}
+    ])
+  </script>
+</body>
+
+</html>
